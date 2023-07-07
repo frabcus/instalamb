@@ -1,6 +1,12 @@
 
-Make a basic plugin
-Remove "Suggestions for you" of who to follow section
+Remove "Stories" menu
+Remove "Suggested Posts" section
+Remove "Likes counts"
+
+Add UI for picking features
+
+Remove the stupid stuff at the top of the page
+
 
 
 
@@ -22,6 +28,9 @@ Make a video with an actual lamb in it
 
 Launch
 ======
+
+Find the most viral hard core open source license for a browser plugin
+Decide whether to make it open source
 
 Set up instalamb@flourish.org email as in Manifest
 
