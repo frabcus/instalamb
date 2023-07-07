@@ -1,9 +1,10 @@
 {
-    "manifest_version" : 2,
-    "name": "Instalamb",
-    "version": "0.1",
+    "manifest_version" : 3,
 
+    "name": "Instalamb",
     "description": "Customise Instagram to be the way you want it.",
+
+    "version": "0.1",
 
     "icons": {
 
