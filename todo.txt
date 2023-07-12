@@ -5,9 +5,12 @@ Remove "Suggested Posts" section
         then we remove it
     Not clear how we know when we come to end of that or there is page transition?
 
-Remove "Suggested for you" which appears in right sidebar at wide widths
 Remove "Likes counts"
-Hide Reels, Hide videos
+Remove user counts on user page
+Hide reels/videos (are they technically same thing now as well?)
+
+Performance metric to see if worth speeding up by scanning multiple elements at once
+    Is there a better built in browser API for find element by stripped text content?
 
 Add UI for picking features
 

@@ -11,6 +11,17 @@ function hideSuggestionsForYou() {
     console.log("Instalamb: Shifted 'Suggestions for you' off screen");
 }
 
+function hideSuggestedForYou() {
+    var found = findSpanByText("Suggested for you");
+    if (!found) {
+        return;
+    }
+
+    const holder = found.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement
+    shiftElemenOutTheWay(holder);
+    console.log("Instalamb: Shifted 'Suggested for you' off screen");
+}
+
 // This doesn't work as DOM mutates with scrolling - maybe intercept API responses??
 function hideSuggestedPosts() {
     var found = findSpanByText("Suggested Posts");
@@ -50,6 +61,7 @@ const observer = new MutationObserver(mutations => {
     } else if (pageCategory == "home") {
         hideStoriesMenu();
         hideSuggestionsForYou();
+        hideSuggestedForYou();
     }
 });
 

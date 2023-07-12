@@ -1,7 +1,7 @@
 function findElementByText(element, text) {
     var found;
     for (const s of document.querySelectorAll(element, text)) {
-      if (s.textContent.includes(text)) {
+      if (s.textContent.trim() == text) {
         found = s;
       }
     }
