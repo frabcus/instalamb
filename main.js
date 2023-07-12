@@ -1,19 +1,19 @@
-console.log("hello lamb");
-document.body.style.border = "5px solid green";
+console.log("Instalamb: Loading");
 
-function findElementByText(text) {
-    var found;
-    for (const s of document.querySelectorAll("span")) {
-      if (s.textContent.includes("Suggestions for you")) {
-        found = s;
-      }
+function hideSuggestionsForYou() {
+    var found = findSpanByText("Suggestions for you");
+    if (!found) {
+        return;
     }
-    return found;
+
+    const holder = found.parentElement.parentElement.parentElement.parentElement
+    shiftElemenOutTheWay(holder);
+    console.log("Instalamb: Shifted 'Suggestions for you' off screen");
 }
 
 // This doesn't work as DOM mutates with scrolling - maybe intercept API responses??
 function hideSuggestedPosts() {
-    var found = findElementByText("Suggested Posts");
+    var found = findSpanByText("Suggested Posts");
     if (!found) {
         return;
     }
@@ -31,23 +31,26 @@ function hideSuggestedPosts() {
     }
 }
 
-function hideSuggestionsForYou() {
-    var found = findElementByText("Suggestions for you");
+function hideStoriesMenu() {
+    var found = document.querySelector('[role="menu"]');
     if (!found) {
         return;
     }
-
-    let holder = found.parentElement.parentElement.parentElement.parentElement
-    holder.style.position = "absolute";
-    holder.style.top = "-9999px";
-    holder.style.left = "-9999px";
-    console.log("Instalamb: Shifted 'Suggestions for you' off screen");
+    
+    const holder = found.parentElement.parentElement.parentElement;
+    shiftElemenOutTheWay(holder);
+    console.log("Instalamb: Shifted 'Stories menu' off screen");
 }
 
-
 const observer = new MutationObserver(mutations => {
-    console.log("in the observer");
-    hideSuggestionsForYou();
+    const pageCategory = detectPageCategory();
+    console.log("Instalamb: Page is", pageCategory);
+
+    if (pageCategory == "user") {
+    } else if (pageCategory == "home") {
+        hideStoriesMenu();
+        hideSuggestionsForYou();
+    }
 });
 
 // Could optimise this more

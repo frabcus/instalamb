@@ -13,7 +13,7 @@
     "content_scripts": [
         {
             "matches": ["https://www.instagram.com/*"],
-            "js": ["main.js"]
+            "js": ["dom-utils.js", "page.js", "main.js"]
         }
     ],
 
