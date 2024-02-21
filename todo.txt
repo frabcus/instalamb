@@ -1,15 +1,11 @@
-Remove "Suggested Posts" section
-    Grab "You're all caught up / suggested posts div"
-    Record padding-top of its parent
-    And if it is NOT on the screen, but padding top is larger than its value
-        then we remove it
-    Not clear how we know when we come to end of that or there is page transition?
-
 Remove rest of sidebar
 
 Remove "Likes counts"
 Remove user counts on user page
 
+Improve "Suggested Posts" section
+    Could record padding-top
+    
 Hide reels/videos (are they technically same thing now as well?)
 
 Performance metric to see if worth speeding up by scanning multiple elements at once
