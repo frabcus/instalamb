@@ -1,0 +1,3 @@
+#!/bin/bash
+
+zip builds/instalamb.zip *.js manifest.json

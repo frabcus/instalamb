@@ -1,20 +1,18 @@
-Remove rest of sidebar
+Next
+====
+
+Add customisation user interface
 
 Remove "Likes counts"
 Remove user counts on user page
 
-Improve "Suggested Posts" section
+Remove rest of sidebar
+
+Improve "Suggested Posts" section so scrolling doesn't reach posts after a bunch of blank space
     Could record padding-top
+    Work out how to trick the React code into not allowing scrolling / not calling network
     
-Hide reels/videos (are they technically same thing now as well?)
-
-Performance metric to see if worth speeding up by scanning multiple elements at once
-    Is there a better built in browser API for find element by stripped text content?
-
-Add UI for picking features
-
-Remove the stupid stuff at the top of the page
-
+Rewind / fast forward in videos
 
 
 Later features
@@ -31,13 +29,3 @@ Draw a logo - search "doodle lamb"
 Register an Instagram account
 Make a Reels videos marketing it
 Make a video with an actual lamb in it
-
-
-Launch
-======
-
-Find the most viral hard core open source license for a browser plugin
-Decide whether to make it open source
-
-Set up instalamb@flourish.org email as in Manifest
-
