@@ -1,25 +1,15 @@
-function findElementByText(element, text) {
-    var found;
-    for (const s of document.querySelectorAll(element, text)) {
-      if (s.textContent.trim() == text) {
-        found = s;
-      }
-    }
-    return found;
+function _findSingleXPath(xpath) {
+  var found = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE)
+  return found.singleNodeValue 
 }
 
-function findSpanByText(text) {
-    return findElementByText("span", text);
-}
-
-function findDivByText(text) {
-    return findElementByText("div", text);
+function find(element, text, attributes='true()') {
+  query = `//${element}[${attributes} and normalize-space(.) = '${text}']`;
+  return _findSingleXPath(query);
 }
 
 function shiftElemenOutTheWay(el) {
-    el.style.position = "absolute";
-    el.style.top = "-9999px";
-    el.style.left = "-9999px";
+    el.style.position = 'absolute';
+    el.style.top = '-9999px';
+    el.style.left = '-9999px';
 }
-
-

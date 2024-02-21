@@ -1,8 +1,8 @@
 function detectPageCategory() {
-    if (findDivByText("Message")) {
-        return "user";
+    if (find('div', 'Message')) {
+        return 'user';
     }
-    return "home";
+    return 'home';
 }
 
 

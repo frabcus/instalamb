@@ -5,8 +5,11 @@ Remove "Suggested Posts" section
         then we remove it
     Not clear how we know when we come to end of that or there is page transition?
 
+Remove rest of sidebar
+
 Remove "Likes counts"
 Remove user counts on user page
+
 Hide reels/videos (are they technically same thing now as well?)
 
 Performance metric to see if worth speeding up by scanning multiple elements at once
@@ -15,7 +18,6 @@ Performance metric to see if worth speeding up by scanning multiple elements at 
 Add UI for picking features
 
 Remove the stupid stuff at the top of the page
-
 
 
 

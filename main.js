@@ -1,30 +1,19 @@
-console.log("Instalamb: Loading");
+console.log('Instalamb: Loading');
 
-function hideSuggestionsForYou() {
-    var found = findSpanByText("Suggestions for you");
+// Right sidebar of home page at desktop widths
+function hideHomeSuggestedForYou() {
+    var found = find('span', 'Suggested for you', '@dir="auto"')
     if (!found) {
         return;
     }
 
-    const holder = found.parentElement.parentElement.parentElement.parentElement
+    const holder = found.parentElement.parentElement.parentElement
     shiftElemenOutTheWay(holder);
-    console.log("Instalamb: Shifted 'Suggestions for you' off screen");
-}
-
-function hideSuggestedForYou() {
-    var found = findSpanByText("Suggested for you");
-    if (!found) {
-        return;
-    }
-
-    const holder = found.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement
-    shiftElemenOutTheWay(holder);
-    console.log("Instalamb: Shifted 'Suggested for you' off screen");
 }
 
 // This doesn't work as DOM mutates with scrolling - maybe intercept API responses??
 function hideSuggestedPosts() {
-    var found = findSpanByText("Suggested Posts");
+    var found = find('span','Suggested Posts');
     if (!found) {
         return;
     }
@@ -33,16 +22,17 @@ function hideSuggestedPosts() {
     // There isn't much else to go on in the DOM - could we match against styles?
     let nextArticle = found.parentElement.parentElement.parentElement.parentElement.nextElementSibling;
     while (nextArticle) {
-        console.log("nextArticle", nextArticle);
-        if (nextArticle.tagName == "ARTICLE") {
-            nextArticle.style.border = "5px solid red";
-            nextArticle.style.display = "none";
+        console.log('nextArticle', nextArticle);
+        if (nextArticle.tagName == 'ARTICLE') {
+            nextArticle.style.border = '5px solid red';
+            nextArticle.style.display = 'none';
         }
         nextArticle = nextArticle.nextElementSibling;
     }
 }
 
-function hideStoriesMenu() {
+// Row of circles with stories in at top of home page
+function hideHomeStoriesMenu() {
     var found = document.querySelector('[role="menu"]');
     if (!found) {
         return;
@@ -50,18 +40,17 @@ function hideStoriesMenu() {
     
     const holder = found.parentElement.parentElement.parentElement;
     shiftElemenOutTheWay(holder);
-    console.log("Instalamb: Shifted 'Stories menu' off screen");
+    console.log('Instalamb: Shifted "Stories menu" off screen');
 }
 
 const observer = new MutationObserver(mutations => {
     const pageCategory = detectPageCategory();
-    console.log("Instalamb: Page is", pageCategory);
+    console.log('Instalamb: Page is', pageCategory);
 
-    if (pageCategory == "user") {
-    } else if (pageCategory == "home") {
-        hideStoriesMenu();
-        hideSuggestionsForYou();
-        hideSuggestedForYou();
+    if (pageCategory == 'user') {
+    } else if (pageCategory == 'home') {
+        hideHomeStoriesMenu();
+        hideHomeSuggestedForYou();
     }
 });
 
