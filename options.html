@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            user-select: none;
+            padding: 0;
+            margin: 0;
+            font-family: inherit;
+            font-size: 15px;
+        }
+        
+        .section .title {
+            font-size: 16px;
+            cursor: pointer;
+            padding: 1em;
+        }
+
+        .section label {
+            padding-left: 1em;
+        }
+
+        input[type="checkbox"] {
+            margin-left: 1em;
+            margin-right: 0.5em;
+        }
+    </style>
+  </head>
+
+  <body>
+    <form>
+        <div class="section">
+            <div class="title">Home timeline</div>
+
+            <label><input type="checkbox" id="hideHomeStories" name="settings" value="hideHomeStories" /> Hide Stories across top of page</label>
+            <br>
+            <label><input type="checkbox" id="hideHomeSuggestedForYou" name="settings" value="hideHomeSuggestedForYou" /> Hide "Suggested for you" right sidebar</label>
+            <br>
+            <label><input type="checkbox" id="hideHomeSuggestedPosts" name="settings" value="hideHomeSuggestedPosts" /> Hide "Suggested posts" in feed</label>      
+        </div>
+    </form>
+
+    <script src="options.js"></script>
+  </body>
+</html>

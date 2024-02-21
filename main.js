@@ -62,15 +62,27 @@ function hideHomeSuggestedPosts() {
 }
 
 // Main entrypoint, when DOM changes
-const observer = new MutationObserver(mutations => {
+const observer = new MutationObserver(async mutations => {
     const pageCategory = detectPageCategory();
     console.log('Instalamb: Page is', pageCategory);
 
+    settings = await browser.storage.sync.get(({
+        "hideHomeStories": true,
+        "hideHomeSuggestedForYou": true,
+        "hideHomeSuggestedPosts": true
+    }));
+
     if (pageCategory == 'user') {
     } else if (pageCategory == 'home') {
-        hideHomeStoriesMenu();
-        hideHomeSuggestedForYou();
-        hideHomeSuggestedPosts();
+        if (settings.hideHomeStories) {
+            hideHomeStoriesMenu();
+        }
+        if (settings.hideHomeSuggestedForYou) {
+            hideHomeSuggestedForYou();
+        }
+        if (settings.hideHomeSuggestedPosts) {
+            hideHomeSuggestedPosts();
+        }
     }
 });
 
