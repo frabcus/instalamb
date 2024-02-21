@@ -1,22 +1,37 @@
 Next
 ====
 
+Packaged extension on Firefox doesn't work
+
+Improve "Suggested Posts" hiding:
+    Bug - at mobile widths it doesn't hide 
+    So scrolling doesn't reach posts after a bunch of blank space
+    It doesn't load the posts at all so not a performance drain.
+
+    ??? Could record padding-top
+
+Chrome
+    Hard to find options
+    Options don't load / save
+
+Test on Android Firefox
+
 Remove "Likes counts"
+    Main feed
+    Comments popup page
+Remove comments counts
 Remove user counts on user page
 
 Remove rest of sidebar
 
-Change menu - remove items
+Change left menu - remove items
 
 Rewind / fast forward in videos
 
-Improve "Suggested Posts" section so scrolling doesn't reach posts after a bunch of blank space
-    It's also a performance drain!
-    Could record padding-top
-    Work out how to trick the React code into not allowing scrolling / not calling network
     
 Automatically reload page when settings change
 Share options list between options.js and main.js
+Make logging a debug option
 
 
 Later features
