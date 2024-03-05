@@ -1,4 +1,4 @@
-console.log('Instalamb: Loading');
+console.log('Instalamb: Main loading');
 
 // Row of circles with stories in at top of home page
 function hideHomeStoriesMenu() {

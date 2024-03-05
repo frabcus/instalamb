@@ -1,3 +1,5 @@
+console.log('Instalamb: Options loading');
+
 function saveOptions(e) {
     browser.storage.sync.set({
         hideHomeStories: document.querySelector("#hideHomeStories").checked,
