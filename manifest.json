@@ -7,6 +7,11 @@
     "version": "0.2",
 
     "icons": {
+        "32": "images/lamb-32.png",
+        "48": "images/lamb-48.png",
+        "64": "images/lamb-64.png",
+        "256": "images/lamb-256.png",
+        "384": "images/lamb-384.png"
     },
 
     "content_scripts": [
@@ -15,6 +20,11 @@
             "js": ["dom-utils.js", "page.js", "main.js"]
         }
     ],
+
+    "action": {
+        "default_title": "Instalamb",
+        "default_popup": "options.html"
+    },
 
     "options_ui": {
         "page": "options.html"

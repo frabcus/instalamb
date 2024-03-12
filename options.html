@@ -8,13 +8,26 @@
             padding: 0;
             margin: 0;
             font-family: inherit;
-            font-size: 15px;
+            overflow: hidden;
+            font-size: 12px;
+            font-family: system-ui;
+        }
+
+        .icon {
+            float: right;
+            margin-right: 0.5em;
+            margin-top: 0.5em;
+        }
+
+        .form {
+            margin-right: 5em;
+            margin-bottom: 1em;
         }
         
         .section .title {
-            font-size: 16px;
             cursor: pointer;
             padding: 1em;
+            font-weight: bold;
         }
 
         .section label {
@@ -22,14 +35,22 @@
         }
 
         input[type="checkbox"] {
-            margin-left: 1em;
+            margin-left: 2em;
             margin-right: 0.5em;
+        }
+
+        .slogan {
+            font-style: italic;
+            margin-top: 1em;
+            margin-left: 1em;
+            margin-right: 1em;
         }
     </style>
   </head>
 
   <body>
     <form>
+        <img class="icon" src="images/lamb-48.png" title="Instalamb">
         <div class="section">
             <div class="title">Home timeline</div>
 
@@ -39,6 +60,7 @@
             <br>
             <label><input type="checkbox" id="hideHomeSuggestedPosts" name="settings" value="hideHomeSuggestedPosts" /> Hide "Suggested posts" in feed</label>      
         </div>
+        <p class="slogan">Instalamb - Makes Instagram cute and cuddly like a lamb</p>
     </form>
 
     <script src="options.js"></script>

@@ -1,7 +1,10 @@
 Next
 ====
 
-Packaged extension on Firefox doesn't work
+Test more on Android Firefox
+    Check on mobile mode on Desktop again
+    web-ext run -t firefox-android
+    See if needed: adb forward tcp:6000 tcp:6000
 
 Improve "Suggested Posts" hiding:
     Bug - at mobile widths it doesn't hide 
@@ -13,8 +16,6 @@ Improve "Suggested Posts" hiding:
 Chrome
     Hard to find options
     Options don't load / save
-
-Test on Android Firefox
 
 Remove "Likes counts"
     Main feed
