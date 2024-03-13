@@ -2,11 +2,7 @@ Next
 ====
 
 Chrome
-    Getting "Suggested posts" instead of capital P - so need to detect mobile / desktop case better
-    
-    Doesn't seem to prompt for permissions on load even if forced to? Maybe it just gets them always?
     Publish to Chrome store
-
 
 Styling bugs
     Icon looks bad in dark mode
@@ -34,11 +30,6 @@ Automatically reload page when settings change
 
 Share options list between options.js and main.js
 Make logging a debug option
-
-Improve "Suggested Posts" hiding:
-    So scrolling doesn't reach posts after a bunch of blank space
-    It doesn't load the posts at all so not a performance drain.
-    ??? Could record padding-top
 
 
 Later features

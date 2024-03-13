@@ -8,7 +8,7 @@ function hideHomeStoriesMenu() {
     }
     
     const holder = found.parentElement;
-    shiftElemenOutTheWay(holder);
+    shiftElementOutTheWay(holder);
     console.log('Instalamb: Shifted "Stories menu" off screen');
 }
 
@@ -20,61 +20,45 @@ function hideHomeSuggestedForYou() {
     }
 
     const holder = found.parentElement.parentElement.parentElement
-    shiftElemenOutTheWay(holder);
+    shiftElementOutTheWay(holder);
     console.log('Instalamb: Shifted "Suggested for you" off screen');
 }
 
 // When scrolling in feed, it has a div "You're all caught up, You've seen all new posts from the past 7 days."
-// This removes all posts after that, stopping infinite scroll. The posts are all HTML <article> elements.
+// This removes all posts after that, stopping infinite scroll. The posts are all HTML <article> elements, with
+// one <div> in their siblings which has the "You're caught up" part in it.
 function hideHomeSuggestedPosts() {
-    let suggestedPosts;
-    let caughtUp; // "You're all caught up" section, at same level as the articles
-
-    // Desktop
-    suggestedPosts = findElement('span','Suggested Posts');
-    if (suggestedPosts) {
-        caughtUp = suggestedPosts.parentElement.parentElement.parentElement.parentElement;
-    }
-
-    if (!suggestedPosts) {
-        // Mobile
-        suggestedPosts = findElement('span','Suggested posts');
-        if (suggestedPosts) {
-            caughtUp = suggestedPosts.parentElement.parentElement.parentElement;
-        }
-    }
+    const suggestedPosts = findElement('span','Suggested Posts') || findElement('span','Suggested posts');
 
     // If we found it, hide the suggested posts part
     if (!suggestedPosts) {
         return;
     }
-    shiftElemenOutTheWay(suggestedPosts);
+    shiftElementOutTheWay(suggestedPosts);
 
-    // // Make large scrolling parent area smaller
-    // let scrollArea = caughtUp.parentElement;
-    // console.log("padding***", getComputedStyle(scrollArea).getPropertyValue('padding-bottom'));
-
-    // Make sure earlier articles visible
-    let prevArticle = caughtUp.previousElementSibling;
-    while (prevArticle) {
-        // console.log("prevArticle", prevArticle)
-        if (prevArticle.tagName == 'ARTICLE') {
-            prevArticle.style.visibility = null;
-        }
-        prevArticle = prevArticle.previousElementSibling;
+    // Make articles before the div into 
+    let article = findElement('article')
+    while (article && article.tagName == 'ARTICLE') {
+        // console.log("showing", article);
+        article.style.display = null;
+        article = article.nextElementSibling;
     }
 
-    // Hide later articles
-    let nextArticle = caughtUp.nextElementSibling;
-    while (nextArticle) {
-        // console.log("nextArticle", nextArticle)
-        if (nextArticle.tagName == 'ARTICLE') {
-            nextArticle.style.visibility = "hidden";
-        }
-        nextArticle = nextArticle.nextElementSibling;
+    // Skip the <div> which contains the "You're all caught up"
+    if (article) {
+        // console.log("skipping", article);
+        article.style.paddingBottom = "10000px";
+        article = article.nextElementSibling;
     }
 
-    console.log('Instalamb: Hid suggested posts and prevented infinite scroll');
+    // Hide articles after the "You've all caught up" div
+    while (article && article.tagName == 'ARTICLE') {
+        // console.log("hiding", article);
+        article.style.display = "none";
+        article = article.nextElementSibling;
+    }
+
+    console.log('Instalamb: Hid suggested posts in infinite scroll');
 }
 
 // Main entrypoint, when DOM changes
