@@ -39,7 +39,6 @@
     ],
 
     "permissions": [
-        "https://www.instagram.com/*",
         "storage"
     ],
 

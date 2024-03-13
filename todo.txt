@@ -2,8 +2,9 @@ Next
 ====
 
 Test more on Android Firefox
-    Check on mobile mode on Desktop again
-    Settings too small on mobile
+    Settings too small on mobile - set viewport right for page
+    Breaks whole page to turn off stories
+    Method to detect suggested posts in scroll doesn't work
 
 Improve "Suggested Posts" hiding:
     Bug - at mobile widths it doesn't hide 
@@ -17,7 +18,8 @@ Chrome
     Options don't load / save
     Publish to Chrome store
 
-Icon looks bad in dark mode
+Styling bugs
+    Icon looks bad in dark mode
 
 Remove feed completely (rish* in Discord)
 Remove "Likes counts"

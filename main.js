@@ -7,7 +7,7 @@ function hideHomeStoriesMenu() {
         return;
     }
     
-    const holder = found.parentElement.parentElement.parentElement;
+    const holder = found.parentElement;
     shiftElemenOutTheWay(holder);
     console.log('Instalamb: Shifted "Stories menu" off screen');
 }
