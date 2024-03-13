@@ -29,7 +29,7 @@ function restoreOptions() {
 
 document.addEventListener("DOMContentLoaded", restoreOptions);
 
-var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+let checkboxes = document.querySelectorAll('input[type="checkbox"]');
 checkboxes.forEach(function(checkbox) {
     checkbox.addEventListener('click', saveOptions);
 });

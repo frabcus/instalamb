@@ -1,9 +1,9 @@
 function _findSingleXPath(xpath) {
-  var found = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE)
+  let found = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE)
   return found.singleNodeValue 
 }
 
-function find(element, text, attributes='true()') {
+function findElement(element, text, attributes='true()') {
   query = `//${element}[${attributes} and normalize-space(.) = '${text}']`;
   return _findSingleXPath(query);
 }

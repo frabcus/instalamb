@@ -2,7 +2,7 @@ console.log('Instalamb: Main loading');
 
 // Row of circles with stories in at top of home page
 function hideHomeStoriesMenu() {
-    var found = document.querySelector('[role="menu"]');
+    let found = document.querySelector('[role="menu"]');
     if (!found) {
         return;
     }
@@ -14,7 +14,7 @@ function hideHomeStoriesMenu() {
 
 // Right sidebar of home page at desktop widths
 function hideHomeSuggestedForYou() {
-    var found = find('span', 'Suggested for you', '@dir="auto"')
+    let found = findElement('span', 'Suggested for you', '@dir="auto"')
     if (!found) {
         return;
     }
@@ -27,33 +27,47 @@ function hideHomeSuggestedForYou() {
 // When scrolling in feed, it has a div "You're all caught up, You've seen all new posts from the past 7 days."
 // This removes all posts after that, stopping infinite scroll. The posts are all HTML <article> elements.
 function hideHomeSuggestedPosts() {
-    var suggestedPosts = find('span','Suggested Posts');
+    let suggestedPosts;
+    let caughtUp; // "You're all caught up" section, at same level as the articles
+
+    // Desktop
+    suggestedPosts = findElement('span','Suggested Posts');
+    if (suggestedPosts) {
+        caughtUp = suggestedPosts.parentElement.parentElement.parentElement.parentElement;
+    }
+
+    if (!suggestedPosts) {
+        // Mobile
+        suggestedPosts = findElement('span','Suggested posts');
+        if (suggestedPosts) {
+            caughtUp = suggestedPosts.parentElement.parentElement.parentElement;
+        }
+    }
+
+    // If we found it, hide the suggested posts part
     if (!suggestedPosts) {
         return;
     }
     shiftElemenOutTheWay(suggestedPosts);
 
-    // "You're all caught up" section, at same level as the articles
-    let caughtUp = suggestedPosts.parentElement.parentElement.parentElement.parentElement;
-
     // // Make large scrolling parent area smaller
     // let scrollArea = caughtUp.parentElement;
     // console.log("padding***", getComputedStyle(scrollArea).getPropertyValue('padding-bottom'));
 
-    // Make sure earlier articles in front
+    // Make sure earlier articles visible
     let prevArticle = caughtUp.previousElementSibling;
     while (prevArticle) {
         if (prevArticle.tagName == 'ARTICLE') {
-            prevArticle.style.zIndex = null;
+            prevArticle.style.visibility = null;
         }
         prevArticle = prevArticle.previousElementSibling;
     }
 
-    // Put later articles at the back
+    // Hide later articles
     let nextArticle = caughtUp.nextElementSibling;
     while (nextArticle) {
         if (nextArticle.tagName == 'ARTICLE') {
-            nextArticle.style.zIndex = '-10000';
+            nextArticle.style.visibility = "hidden";
         }
         nextArticle = nextArticle.nextElementSibling;
     }

@@ -1,5 +1,5 @@
 function detectPageCategory() {
-    if (find('div', 'Message')) {
+    if (findElement('div', 'Message')) {
         return 'user';
     }
     return 'home';

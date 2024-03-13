@@ -1,11 +1,6 @@
 Next
 ====
 
-Test more on Android Firefox
-    Settings too small on mobile - set viewport right for page
-    Breaks whole page to turn off stories
-    Method to detect suggested posts in scroll doesn't work
-
 Improve "Suggested Posts" hiding:
     Bug - at mobile widths it doesn't hide 
     So scrolling doesn't reach posts after a bunch of blank space
