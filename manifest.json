@@ -14,6 +14,10 @@
         "384": "images/lamb-384.png"
     },
 
+    "background": {
+        "scripts": ["background.js"]
+    },
+
     "content_scripts": [
         {
             "matches": ["https://www.instagram.com/*"],
@@ -35,6 +39,7 @@
     ],
 
     "permissions": [
+        "https://www.instagram.com/*",
         "storage"
     ],
 

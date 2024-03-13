@@ -1,0 +1,47 @@
+body {
+    user-select: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    overflow: hidden;
+    font-size: 12px;
+    font-family: system-ui;
+}
+
+.icon {
+    float: right;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+}
+
+.form {
+    margin-right: 5em;
+    margin-bottom: 1em;
+}
+
+.section .title {
+    cursor: pointer;
+    padding: 1em;
+    font-weight: bold;
+}
+
+.section label {
+    padding-left: 1em;
+}
+
+input[type="checkbox"] {
+    margin-left: 2em;
+    margin-right: 0.5em;
+}
+
+.slogan {
+    font-style: italic;
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+#welcome {
+    margin-left: 5em;
+    text-align: center;
+}

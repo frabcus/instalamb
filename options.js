@@ -16,7 +16,7 @@ function restoreOptions() {
     }
 
     function onError(error) {
-        console.log(`Instalamb Settings Error: ${error}`);
+        console.log(`Instalamb: Settings error - ${error}`);
     }
 
     let getting = browser.storage.sync.get({
@@ -33,4 +33,4 @@ var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 checkboxes.forEach(function(checkbox) {
     checkbox.addEventListener('click', saveOptions);
 });
-//document.querySelector("form").addEventListener("submit", saveOptions);
+

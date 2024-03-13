@@ -3,8 +3,7 @@ Next
 
 Test more on Android Firefox
     Check on mobile mode on Desktop again
-    web-ext run -t firefox-android
-    See if needed: adb forward tcp:6000 tcp:6000
+    Settings too small on mobile
 
 Improve "Suggested Posts" hiding:
     Bug - at mobile widths it doesn't hide 
@@ -16,7 +15,11 @@ Improve "Suggested Posts" hiding:
 Chrome
     Hard to find options
     Options don't load / save
+    Publish to Chrome store
 
+Icon looks bad in dark mode
+
+Remove feed completely (rish* in Discord)
 Remove "Likes counts"
     Main feed
     Comments popup page
@@ -28,7 +31,6 @@ Remove rest of sidebar
 Change left menu - remove items
 
 Rewind / fast forward in videos
-
     
 Automatically reload page when settings change
 Share options list between options.js and main.js
@@ -43,8 +45,6 @@ Localisation
 
 Marketing
 =========
-
-Draw a logo - search "doodle lamb"
 
 Register an Instagram account
 Make a Reels videos marketing it

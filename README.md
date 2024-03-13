@@ -3,6 +3,8 @@ Instalamb
 
 A browser extension which makes instagram cute and cuddly like a baby lamb.
 
+"OMG that has made instagram like 1000% better for me.  Thank you ♥" - [https://fosstodon.org/@kinnison/112083613872685780](Kinnison)
+
 
 Credits
 =======
