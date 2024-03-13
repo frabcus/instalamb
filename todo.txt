@@ -1,8 +1,7 @@
 Next
 ====
 
-Chrome
-    Publish to Chrome store
+Chrome - check works in store
 
 Styling bugs
     Icon looks bad in dark mode
@@ -21,6 +20,16 @@ Change left menu - remove items
 Rewind / fast forward in videos
 
 
+Marketing
+=========
+
+Link to store pages from README
+
+Register an Instagram account
+Make a Reels videos marketing it
+Make a video with an actual lamb in it
+
+
 Lower priority
 ==============
     
@@ -31,16 +40,4 @@ Automatically reload page when settings change
 Share options list between options.js and main.js
 Make logging a debug option
 
-
-Later features
-==============
-
 Localisation
-
-
-Marketing
-=========
-
-Register an Instagram account
-Make a Reels videos marketing it
-Make a video with an actual lamb in it
