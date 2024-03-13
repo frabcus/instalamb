@@ -1,20 +1,16 @@
 Next
 ====
 
-Improve "Suggested Posts" hiding:
-    Bug - at mobile widths it doesn't hide 
-    So scrolling doesn't reach posts after a bunch of blank space
-    It doesn't load the posts at all so not a performance drain.
-
-    ??? Could record padding-top
-
 Chrome
-    Hard to find options
-    Options don't load / save
+    Getting "Suggested posts" instead of capital P - so need to detect mobile / desktop case better
+    
+    Doesn't seem to prompt for permissions on load even if forced to? Maybe it just gets them always?
     Publish to Chrome store
+
 
 Styling bugs
     Icon looks bad in dark mode
+    Too much empty space round icon on Chrome
 
 Remove feed completely (rish* in Discord)
 Remove "Likes counts"
@@ -22,16 +18,27 @@ Remove "Likes counts"
     Comments popup page
 Remove comments counts
 Remove user counts on user page
-
 Remove rest of sidebar
 
 Change left menu - remove items
 
 Rewind / fast forward in videos
+
+
+Lower priority
+==============
     
 Automatically reload page when settings change
+    Actually just need to unhide things if hidden and setting is off now
+        As it refreshes enough as you scroll and do stuff
+
 Share options list between options.js and main.js
 Make logging a debug option
+
+Improve "Suggested Posts" hiding:
+    So scrolling doesn't reach posts after a bunch of blank space
+    It doesn't load the posts at all so not a performance drain.
+    ??? Could record padding-top
 
 
 Later features

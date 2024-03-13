@@ -57,6 +57,7 @@ function hideHomeSuggestedPosts() {
     // Make sure earlier articles visible
     let prevArticle = caughtUp.previousElementSibling;
     while (prevArticle) {
+        // console.log("prevArticle", prevArticle)
         if (prevArticle.tagName == 'ARTICLE') {
             prevArticle.style.visibility = null;
         }
@@ -66,6 +67,7 @@ function hideHomeSuggestedPosts() {
     // Hide later articles
     let nextArticle = caughtUp.nextElementSibling;
     while (nextArticle) {
+        // console.log("nextArticle", nextArticle)
         if (nextArticle.tagName == 'ARTICLE') {
             nextArticle.style.visibility = "hidden";
         }
@@ -80,7 +82,8 @@ const observer = new MutationObserver(async mutations => {
     const pageCategory = detectPageCategory();
     console.log('Instalamb: Page is', pageCategory);
 
-    settings = await browser.storage.sync.get(({
+    var sync = ((typeof browser == 'undefined') ? chrome : browser).storage.sync
+    settings = await sync.get(({
         "hideHomeStories": true,
         "hideHomeSuggestedForYou": true,
         "hideHomeSuggestedPosts": true

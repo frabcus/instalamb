@@ -1,7 +1,9 @@
 console.log('Instalamb: Options loading');
 
+var sync = ((typeof browser == 'undefined') ? chrome : browser).storage.sync;
+
 function saveOptions(e) {
-    browser.storage.sync.set({
+    sync.set({
         hideHomeStories: document.querySelector("#hideHomeStories").checked,
         hideHomeSuggestedForYou: document.querySelector("#hideHomeSuggestedForYou").checked,
         hideHomeSuggestedPosts: document.querySelector("#hideHomeSuggestedPosts").checked,
@@ -19,7 +21,7 @@ function restoreOptions() {
         console.log(`Instalamb: Settings error - ${error}`);
     }
 
-    let getting = browser.storage.sync.get({
+    let getting = sync.get({
         "hideHomeStories": true,
         "hideHomeSuggestedForYou": true,
         "hideHomeSuggestedPosts": true
