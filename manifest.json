@@ -7,11 +7,10 @@
     "version": "0.4",
 
     "icons": {
-        "32": "images/lamb-32.png",
-        "48": "images/lamb-48.png",
-        "64": "images/lamb-64.png",
-        "256": "images/lamb-256.png",
-        "384": "images/lamb-384.png"
+        "48": "images/lamb-circle-48.png",
+        "64": "images/lamb-circle-64.png",
+        "128": "images/lamb-circle-256.png",
+        "256": "images/lamb-circle-256.png"
     },
 
     "background": {

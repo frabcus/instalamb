@@ -3,10 +3,6 @@ Next
 
 Chrome - check works in store
 
-Styling bugs
-    Icon looks bad in dark mode
-    Too much empty space round icon on Chrome
-
 Remove feed completely (rish* in Discord)
 Remove "Likes counts"
     Main feed
@@ -23,6 +19,10 @@ Rewind / fast forward in videos
 Marketing
 =========
 
+Make title longer on both stores e.g. "Unhook - Hide YouTube Recommended, Shorts, and More"
+    "Instalamb - Hide Suggested Posts, Stories, Reels and More"
+Hand make a bunch of marketing screenshots for the stores
+
 Link to store pages from README
 
 Register an Instagram account
@@ -32,6 +32,9 @@ Make a video with an actual lamb in it
 
 Lower priority
 ==============
+
+Remove the welcome page and permissions trigger when Firefox makes host_permissions non-optional
+    https://bugzilla.mozilla.org/show_bug.cgi?id=1745822
     
 Automatically reload page when settings change
     Actually just need to unhide things if hidden and setting is off now
