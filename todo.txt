@@ -1,17 +1,15 @@
 Next
 ====
 
+Hiding stories breaks profile page
+
 Chrome - check works in store
 
-Remove feed completely (rish* in Discord)
-Remove "Likes counts"
-    Main feed
-    Comments popup page
-Remove comments counts
-Remove user counts on user page
-Remove rest of sidebar
-
-Change left menu - remove items
+Metrics 
+    Remove "Likes counts" main feed
+    Remove "Likecounts comments popup page
+    Remove comments counts
+    Remove user counts on user page
 
 Rewind / fast forward in videos
 
@@ -32,6 +30,9 @@ Make a video with an actual lamb in it
 
 Lower priority
 ==============
+
+Performance
+    Could try to had navigation only on page load
 
 Remove the welcome page and permissions trigger when Firefox makes host_permissions non-optional
     https://bugzilla.mozilla.org/show_bug.cgi?id=1745822
