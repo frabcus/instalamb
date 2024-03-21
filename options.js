@@ -8,6 +8,7 @@ function saveOptions(e) {
         hideHomeSuggestedForYou: document.querySelector("#hideHomeSuggestedForYou").checked,
         hideHomeSuggestedPosts: document.querySelector("#hideHomeSuggestedPosts").checked,
 
+        defaultNavPage: document.querySelector('#defaultNavPage').value,
         hideNavHome: document.querySelector("#hideNavHome").checked,
         hideNavSearch: document.querySelector("#hideNavSearch").checked,
         hideNavExplore: document.querySelector("#hideNavExplore").checked,
@@ -27,6 +28,7 @@ function restoreOptions() {
         document.querySelector("#hideHomeSuggestedForYou").checked = result.hideHomeSuggestedForYou;
         document.querySelector("#hideHomeSuggestedPosts").checked = result.hideHomeSuggestedPosts;
 
+        document.querySelector('#defaultNavPage').value = result.defaultNavPage;
         document.querySelector("#hideNavHome").checked = result.hideNavHome;
         document.querySelector("#hideNavSearch").checked = result.hideNavSearch;
         document.querySelector("#hideNavExplore").checked = result.hideNavExplore;
@@ -48,6 +50,7 @@ function restoreOptions() {
         "hideHomeSuggestedForYou": true,
         "hideHomeSuggestedPosts": true,
 
+        "defaultNavPage": "home",
         "hideNavHome": false,
         "hideNavSearch": false,
         "hideNavExplore": false,
@@ -65,7 +68,11 @@ function restoreOptions() {
 document.addEventListener("DOMContentLoaded", restoreOptions);
 
 let checkboxes = document.querySelectorAll('input[type="checkbox"]');
-checkboxes.forEach(function(checkbox) {
-    checkbox.addEventListener('click', saveOptions);
+checkboxes.forEach(function(control) {
+    control.addEventListener('click', saveOptions);
 });
 
+let dropdowns = document.querySelectorAll('select');
+dropdowns.forEach(function(control) {
+    control.addEventListener('change', saveOptions);
+});

@@ -3,8 +3,6 @@ Next
 
 Hiding stories breaks profile page
 
-Chrome - check works in store
-
 Metrics 
     Remove "Likes counts" main feed
     Remove "Likecounts comments popup page

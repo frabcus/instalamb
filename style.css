@@ -28,11 +28,16 @@ body {
 
 .section label {
     padding-left: 1em;
+    display:block ;
 }
 
-input[type="checkbox"] {
+.section input[type="checkbox"] {
     margin-left: 2em;
     margin-right: 0.5em;
+}
+
+.section label.dropdown {
+    margin-left: 2em;
 }
 
 .slogan {

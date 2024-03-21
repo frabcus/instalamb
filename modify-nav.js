@@ -78,3 +78,28 @@ function hideNavThreads() {
 function hideNavMore() {
     _hideNavByAriaBottom("Settings");
 }
+
+// name can be home / explore / reels / messages
+let checkedInitialNavigation = false;
+function switchNavDefaultPage(name) {
+    if (checkedInitialNavigation) {
+        return;
+    }
+
+    const aria = {
+        "home": "Home",
+        "explore": "Explore",
+        "reels": "Reels",
+        "messages": "Direct"
+    }[name];
+    if (aria == "Home") {
+        return;
+    }
+
+    console.log(`Instalamb: Redirecting to menu "${name}" ${aria}`);
+    checkedInitialNavigation = true;
+
+    const menu = document.querySelector(`[aria-label="${aria}"]`);
+    const event = new MouseEvent('click', { bubbles: true, cancelable: true });
+    menu.dispatchEvent(event);
+}

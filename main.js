@@ -19,6 +19,7 @@ const observer = new MutationObserver(async mutations => {
         "hideHomeSuggestedForYou": true,
         "hideHomeSuggestedPosts": true,
 
+        "defaultNavPage": "home",
         "hideNavHome": false,
         "hideNavSearch": false,
         "hideNavExplore": false,
@@ -65,6 +66,9 @@ const observer = new MutationObserver(async mutations => {
 
     if (pageCategory == 'user') {
     } else if (pageCategory == 'home') {
+        // Navigation from home timeline
+        switchNavDefaultPage(settings.defaultNavPage);
+
         // Home page
         if (settings.hideHomeStories) {
             hideHomeStoriesMenu();
