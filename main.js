@@ -30,6 +30,9 @@ const observer = new MutationObserver(async mutations => {
         "hideNavProfile": false,
         "hideNavThreads": false,
         "hideNavMore": false,
+
+        "hideMetricsLikes": false,
+        "hideCommentCounts": false
     }));
 
     // Navigation
@@ -69,7 +72,7 @@ const observer = new MutationObserver(async mutations => {
         // Navigation from home timeline
         switchNavDefaultPage(settings.defaultNavPage);
 
-        // Home page
+        // Feed on home page
         if (settings.hideHomeStories) {
             hideHomeStoriesMenu();
         }
@@ -78,6 +81,14 @@ const observer = new MutationObserver(async mutations => {
         }
         if (settings.hideHomeSuggestedPosts) {
             hideHomeSuggestedPosts();
+        }
+
+        // Metrics on home page
+        if (settings.hideMetricsLikes) {
+            hideHomeLikeCounts();
+        }
+        if (settings.hideCommentCounts) {
+            hideHomeCommentCounts();
         }
     }
 });

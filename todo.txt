@@ -4,9 +4,7 @@ Next
 Hiding stories breaks profile page
 
 Metrics 
-    Remove "Likes counts" main feed
-    Remove "Likecounts comments popup page
-    Remove comments counts
+    Remove "Like" counts in comments popup page
     Remove user counts on user page
 
 Rewind / fast forward in videos

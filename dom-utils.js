@@ -1,6 +1,15 @@
-function _findSingleXPath(xpath) {
+function findSingleXPath(xpath) {
   const found = document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE)
   return found.singleNodeValue 
+}
+
+function findAllXPath(xpath) {
+  const spans = document.evaluate(xpath, document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE)
+  const matchingSpans = [];
+  for (let i = 0; i < spans.snapshotLength; i++) {
+    matchingSpans.push(spans.snapshotItem(i));
+  }
+  return matchingSpans;
 }
 
 function findElement(element, text=null, attributes='true()') {
@@ -9,7 +18,7 @@ function findElement(element, text=null, attributes='true()') {
     query += ` and normalize-space(.) = '${text}'`;
   }
   query += `]`;
-  return _findSingleXPath(query);
+  return findSingleXPath(query);
 }
 
 function shiftElementOutTheWay(el) {

@@ -19,6 +19,9 @@ function saveOptions(e) {
         hideNavProfile: document.querySelector("#hideNavProfile").checked,
         hideNavThreads: document.querySelector("#hideNavThreads").checked,
         hideNavMore: document.querySelector("#hideNavMore").checked,
+
+        hideMetricsLikes: document.querySelector("#hideMetricsLikes").checked,
+        hideMetricsCommentCounts: document.querySelector("#hideMetricsCommentCounts").checked,
     });
 }
   
@@ -39,6 +42,9 @@ function restoreOptions() {
         document.querySelector("#hideNavProfile").checked = result.hideNavProfile;
         document.querySelector("#hideNavThreads").checked = result.hideNavThreads;
         document.querySelector("#hideNavMore").checked = result.hideNavMore;
+
+        document.querySelector("#hideMetricsLikes").checked = result.hideMetricsLikes;
+        document.querySelector("#hideMetricsCommentCounts").checked = result.hideMetricsCommentCounts;
     }
 
     function onError(error) {
@@ -61,6 +67,9 @@ function restoreOptions() {
         "hideNavProfile": false,
         "hideNavThreads": false,
         "hideNavMore": false,
+
+        "hideMetricsLikes": false,
+        "hideCommentCounts": false
     });
     getting.then(setCurrentChoice, onError);
 }
