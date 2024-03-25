@@ -1,10 +1,14 @@
 console.log('Instalamb: Main loading');
 
 function detectPageCategory() {
-    if (findElement('div', 'Message')) {
-        return 'user';
+    let page
+    if (findElement('div', 'Follow') || findElement('div', 'Following')) {
+        page = 'user';
+    } else {
+        page = 'home';
     }
-    return 'home';
+    console.log(`Instalamb: Page type detected "${page}"`);
+    return page;
 }
 
 

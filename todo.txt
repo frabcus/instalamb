@@ -1,8 +1,6 @@
 Next
 ====
 
-Hiding stories breaks profile page
-
 Metrics 
     Remove "Like" counts in comments popup page
     Remove user counts on user page

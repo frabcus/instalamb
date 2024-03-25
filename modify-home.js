@@ -56,5 +56,5 @@ function hideHomeSuggestedPosts() {
         article = article.nextElementSibling;
     }
 
-    console.log('Instalamb: Hid suggested posts in infinite scroll');
+    console.log('Instalamb: Hidden suggested posts in infinite scroll');
 }
