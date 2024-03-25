@@ -2,8 +2,8 @@ Next
 ====
 
 Metrics 
-    Remove "Like" counts in comments popup page
     Remove user counts on user page
+    Hide floating "like" and "comment" counts on posts on user pages
 
 Rewind / fast forward in videos
 

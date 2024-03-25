@@ -1,9 +1,20 @@
 console.log('Instalamb: Main loading');
 
 function detectPageCategory() {
-    let page
-    if (findElement('div', 'Follow') || findElement('div', 'Following')) {
-        page = 'user';
+    const url = new URL(window.location.href);
+    const metaOgType = document.querySelector('meta[property="og:type"]');
+    let ogType = "";
+    if (metaOgType) {
+        ogType = metaOgType.getAttribute('content');
+    }
+    
+    let page;
+    if (url.pathname.startsWith('/p/')) {
+        page = "post";
+    } else if (url.pathname.startsWith('/explore/')) {
+        page = "explore";
+    } else if (ogType == 'profile') {
+        page = 'profile';
     } else {
         page = 'home';
     }
@@ -26,17 +37,17 @@ const observer = new MutationObserver(async mutations => {
         "defaultNavPage": "home",
         "hideNavHome": false,
         "hideNavSearch": false,
-        "hideNavExplore": false,
-        "hideNavReels": false,
+        "hideNavExplore": true,
+        "hideNavReels": true,
         "hideNavMessages": false,
-        "hideNavNotifications": false,
+        "hideNavNotifications": true,
         "hideNavCreate": false,
         "hideNavProfile": false,
-        "hideNavThreads": false,
+        "hideNavThreads": true,
         "hideNavMore": false,
 
-        "hideMetricsLikes": false,
-        "hideCommentCounts": false
+        "hideMetricsLikes": true,
+        "hideMetricsCommentCounts": true
     }));
 
     // Navigation
@@ -71,7 +82,10 @@ const observer = new MutationObserver(async mutations => {
         hideNavMore();
     }
 
-    if (pageCategory == 'user') {
+    if (pageCategory == 'post') {
+        if (settings.hideMetricsLikes) {
+            hidePostLikeCounts();
+        }
     } else if (pageCategory == 'home') {
         // Navigation from home timeline
         switchNavDefaultPage(settings.defaultNavPage);
@@ -89,9 +103,9 @@ const observer = new MutationObserver(async mutations => {
 
         // Metrics on home page
         if (settings.hideMetricsLikes) {
-            hideHomeLikeCounts();
+            hidePostLikeCounts();
         }
-        if (settings.hideCommentCounts) {
+        if (settings.hideMetricsCommentCounts) {
             hideHomeCommentCounts();
         }
     }

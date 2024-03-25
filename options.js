@@ -59,17 +59,17 @@ function restoreOptions() {
         "defaultNavPage": "home",
         "hideNavHome": false,
         "hideNavSearch": false,
-        "hideNavExplore": false,
-        "hideNavReels": false,
+        "hideNavExplore": true,
+        "hideNavReels": true,
         "hideNavMessages": false,
-        "hideNavNotifications": false,
+        "hideNavNotifications": true,
         "hideNavCreate": false,
         "hideNavProfile": false,
-        "hideNavThreads": false,
+        "hideNavThreads": true,
         "hideNavMore": false,
 
-        "hideMetricsLikes": false,
-        "hideCommentCounts": false
+        "hideMetricsLikes": true,
+        "hideMetricsCommentCounts": true
     });
     getting.then(setCurrentChoice, onError);
 }

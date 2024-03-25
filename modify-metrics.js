@@ -1,6 +1,6 @@
 
 // Fully remove whole line "3 likes" - just removing the number is a bit odd looking
-function hideHomeLikeCounts() {
+function hideMetricsLikeCounts() {
     const nodes = findAllXPath("//span[text()[contains(., 'likes')]]/span[contains(@class,'html-span')]/ancestor::section[1]");
     nodes.forEach(node => {
         shiftElementOutTheWay(node);
