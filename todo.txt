@@ -1,7 +1,7 @@
 Next
 ====
 
-Hide floating "like" and "comment" counts on posts on user pages (appear dynamically)
+Remove following counts from mini-profile on hover - e.g. on post page and home timeline
 
 Rewind / fast forward in videos
 
@@ -22,6 +22,8 @@ Make a video with an actual lamb in it
 
 Lower priority
 ==============
+
+Hide floating "like" and "comment" counts on posts on user pages (appear dynamically)
 
 Performance
     Could try to had navigation only on page load

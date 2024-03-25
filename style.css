@@ -3,10 +3,8 @@ body {
     padding: 0;
     margin: 0;
     font-family: inherit;
-    overflow: hidden;
     font-size: 12px;
     font-family: system-ui;
-    min-width: 30em;
 }
 
 .icon {
