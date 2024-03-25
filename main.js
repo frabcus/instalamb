@@ -85,7 +85,8 @@ const observer = new MutationObserver(async mutations => {
 
     if (pageCategory == 'post') {
         if (settings.hideMetricsLikes) {
-            hidePostLikeCounts();
+            hidePostSummaryLikeCounts();
+            hideCommentLikeCounts();
         }
     } else if (pageCategory == 'home') {
         // Navigation from home timeline
@@ -104,7 +105,7 @@ const observer = new MutationObserver(async mutations => {
 
         // Metrics on home page
         if (settings.hideMetricsLikes) {
-            hidePostLikeCounts();
+            hidePostSummaryLikeCounts();
         }
         if (settings.hideMetricsCommentCounts) {
             hideHomeCommentCounts();

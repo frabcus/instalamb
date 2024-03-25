@@ -1,9 +1,7 @@
 Next
 ====
 
-Metrics 
-    Remove user counts on user page
-    Hide floating "like" and "comment" counts on posts on user pages
+Hide floating "like" and "comment" counts on posts on user pages (appear dynamically)
 
 Rewind / fast forward in videos
 
