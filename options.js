@@ -22,6 +22,7 @@ function saveOptions(e) {
 
         hideMetricsLikes: document.querySelector("#hideMetricsLikes").checked,
         hideMetricsCommentCounts: document.querySelector("#hideMetricsCommentCounts").checked,
+        hideMetricsProfileCounts: document.querySelector("#hideMetricsProfileCounts").checked,
     });
 }
   
@@ -45,6 +46,7 @@ function restoreOptions() {
 
         document.querySelector("#hideMetricsLikes").checked = result.hideMetricsLikes;
         document.querySelector("#hideMetricsCommentCounts").checked = result.hideMetricsCommentCounts;
+        document.querySelector("#hideMetricsProfileCounts").checked = result.hideMetricsProfileCounts;
     }
 
     function onError(error) {
@@ -69,7 +71,8 @@ function restoreOptions() {
         "hideNavMore": false,
 
         "hideMetricsLikes": true,
-        "hideMetricsCommentCounts": true
+        "hideMetricsCommentCounts": true,
+        "hideMetricsProfileCounts": true
     });
     getting.then(setCurrentChoice, onError);
 }

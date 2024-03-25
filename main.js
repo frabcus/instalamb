@@ -47,7 +47,8 @@ const observer = new MutationObserver(async mutations => {
         "hideNavMore": false,
 
         "hideMetricsLikes": true,
-        "hideMetricsCommentCounts": true
+        "hideMetricsCommentCounts": true,
+        "hideMetricsProfileCounts" : true
     }));
 
     // Navigation
@@ -107,6 +108,10 @@ const observer = new MutationObserver(async mutations => {
         }
         if (settings.hideMetricsCommentCounts) {
             hideHomeCommentCounts();
+        }
+    } else if (pageCategory == 'profile') {
+        if (settings.hideMetricsProfileCounts) {
+            hideProfileCounts();
         }
     }
 });

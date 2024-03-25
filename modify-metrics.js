@@ -1,6 +1,6 @@
 
 // Fully remove whole line "3 likes" - just removing the number is a bit odd looking
-function hideMetricsLikeCounts() {
+function hidePostLikeCounts() {
     const nodes = findAllXPath("//span[text()[contains(., 'likes')]]/span[contains(@class,'html-span')]/ancestor::section[1]");
     nodes.forEach(node => {
         shiftElementOutTheWay(node);
@@ -15,4 +15,13 @@ function hideHomeCommentCounts() {
         shiftElementOutTheWay(node);
     });
     console.log(`Instalamb: Hidden ${nodes.length} comment counts`);
+}
+
+// Removes posts / followers / following counts
+function hideProfileCounts() {
+    const nodes = findAllXPath("//a[text()[last()]=' followers']/ancestor::ul");
+    nodes.forEach(node => {
+        shiftElementOutTheWay(node);
+    });
+    console.log(`Instalamb: Hidden ${nodes.length} profile counts`);
 }
