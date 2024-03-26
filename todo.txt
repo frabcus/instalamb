@@ -1,7 +1,11 @@
 Next
 ====
 
+Bug - all comments get removed in mobile view!
+
 Remove following counts from mini-profile on hover - e.g. on post page and home timeline
+
+Remove "Threads" from more menu on narrow screens
 
 Rewind / fast forward in videos
 
