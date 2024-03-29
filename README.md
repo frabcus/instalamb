@@ -1,13 +1,22 @@
 Instalamb
 =========
 
-A browser extension which makes instagram cute and cuddly like a baby lamb.
+A browser extension which makes Instagram cute and cuddly like a baby lamb.
 
-"OMG that has made instagram like 1000% better for me.  Thank you ♥" - [https://fosstodon.org/@kinnison/112083613872685780](Kinnison)
+"OMG that has made instagram like 1000% better for me.  Thank you ♥" - [Kinnison](https://fosstodon.org/@kinnison/112083613872685780)
+
+Please report bugs in the [GitHub issue tracker](https://github.com/frabcus/instalamb/issues). Email [instalamb@flourish.org](mailto:instalamb@flourish.org).
+
+
+Download
+========
+
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pbongghmpamnclmnmildleojmpdkgipl.svg)](https://chromewebstore.google.com/detail/instalamb/pbongghmpamnclmnmildleojmpdkgipl)
+
+[![Firefox Add-ons](https://img.shields.io/amo/v/instalamb)](https://addons.mozilla.org/en-US/firefox/addon/instalamb/)
 
 
 Credits
 =======
 
-Lamb by Symbolon from the Noun Project (CC BY 3.0)
-https://thenounproject.com/icon/lamb-1046393/
+[Lamb by Symbolon](https://thenounproject.com/icon/lamb-1046393/) from the Noun Project, Creative Commons license (CC BY 3.0)

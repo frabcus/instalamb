@@ -2,3 +2,4 @@ builds
 .*.swp
 .*.swo
 marketing/*~
+.DS_Store

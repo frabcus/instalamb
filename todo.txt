@@ -16,7 +16,9 @@ Marketing
 Make title longer on both stores e.g. "Unhook - Hide YouTube Recommended, Shorts, and More"
     "Instalamb - Hide Suggested Posts, Stories, Reels and More"
 
-Link to store pages from README
+Make sure stores correctly have
+- Right email address
+- Link to bug reporting
 
 Register an Instagram account
 Make a Reels videos marketing it
