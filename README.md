@@ -19,4 +19,4 @@ Download
 Credits
 =======
 
-[Lamb by Symbolon](https://thenounproject.com/icon/lamb-1046393/) from the Noun Project, Creative Commons license (CC BY 3.0)
+[Lamb by Symbolon](https://thenounproject.com/icon/lamb-1046393/) from the Noun Project, Royalty-Free License

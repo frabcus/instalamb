@@ -19,10 +19,13 @@ Make title longer on both stores e.g. "Unhook - Hide YouTube Recommended, Shorts
 Make sure stores correctly have
 - Right email address
 - Link to bug reporting
+- Link to source code
 
 Register an Instagram account
 Make a Reels videos marketing it
 Make a video with an actual lamb in it
+
+Work out how to get "recommended" on the app stores
 
 
 Lower priority

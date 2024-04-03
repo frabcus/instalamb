@@ -1,16 +1,16 @@
 {
     "manifest_version" : 3,
 
-    "name": "Instalamb - take charge of what Instagram feeds you!",
-    "description": "Hide suggested posts and lots more, fully customisable for your own digital detox.",
+    "name": "Instalamb - control what Instagram feeds you!",
+    "description": "Customise your Instagram experience to remove clutter and distractions. Hide unwanted stories, banners, threads and links.",
 
     "version": "0.5",
 
     "icons": {
-        "48": "images/lamb-circle-48.png",
-        "64": "images/lamb-circle-64.png",
-        "128": "images/lamb-circle-256.png",
-        "256": "images/lamb-circle-256.png"
+        "48": "images/lamb-lavender-48.png",
+        "64": "images/lamb-lavender-64.png",
+        "128": "images/lamb-lavender-256.png",
+        "256": "images/lamb-lavender-256.png"
     },
 
     "background": {

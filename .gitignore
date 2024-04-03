@@ -2,4 +2,5 @@ builds
 .*.swp
 .*.swo
 marketing/*~
+images/*~
 .DS_Store
