@@ -110,7 +110,8 @@ const observer = new MutationObserver(async mutations => {
         }
     } else if (pageCategory == 'profile') {
         if (settings.hideMetricsProfileCounts) {
-            hideProfileCounts();
+            hideProfileCountsDesktop();
+            hideProfileCountsMobile();
         }
     }
 });

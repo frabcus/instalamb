@@ -31,10 +31,17 @@ function hideHomeCommentCounts() {
 }
 
 // Removes posts / followers / following counts
-function hideProfileCounts() {
+function hideProfileCountsDesktop() {
     const nodes = findAllXPath("//a[text()[last()]=' followers']/ancestor::ul");
     nodes.forEach(node => {
         shiftElementOutTheWay(node);
     });
-    console.log(`Instalamb: Hidden ${nodes.length} profile counts`);
+    console.log(`Instalamb: Hidden ${nodes.length} desktop profile counts`);
+}
+function hideProfileCountsMobile() {
+    const nodes = findAllXPath("//span[text()[last()]=' followers']/ancestor::ul");
+    nodes.forEach(node => {
+        shiftElementOutTheWay(node);
+    });
+    console.log(`Instalamb: Hidden ${nodes.length} mobile profile counts`);
 }
