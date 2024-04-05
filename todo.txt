@@ -1,8 +1,6 @@
 Next
 ====
 
-Bug - all comments get removed in mobile view! 
-
 Remove following counts from mini-profile on hover - e.g. on post page and home timeline
 
 Remove "Threads" from more menu on narrow screens
@@ -13,10 +11,13 @@ Rewind / fast forward in videos
 Marketing
 =========
 
-Make title longer on both stores e.g. "Unhook - Hide YouTube Recommended, Shorts, and More"
-    "Instalamb - Hide Suggested Posts, Stories, Reels and More"
+After next release check copy for title etc.
 
-Make sure stores correctly have
+Chrome store - make other two banners (they appear e.g. in search results)
+
+Update copy on screenshots, and try changing background colour to lavender
+
+Make chrome store have:s
 - Right email address
 - Link to bug reporting
 - Link to source code

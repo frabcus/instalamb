@@ -2,18 +2,16 @@ console.log('Instalamb: Main loading');
 
 function detectPageCategory() {
     const url = new URL(window.location.href);
-    const metaOgType = document.querySelector('meta[property="og:type"]');
-    let ogType = "";
-    if (metaOgType) {
-        ogType = metaOgType.getAttribute('content');
-    }
+
+    // No reliable URL to distinguish this, use the tooltip on the + person button
+    const similarAccounts = document.querySelector('svg[aria-label="Similar accounts"]');
     
     let page;
     if (url.pathname.startsWith('/p/')) {
         page = "post";
     } else if (url.pathname.startsWith('/explore/')) {
         page = "explore";
-    } else if (ogType == 'profile') {
+    } else if (similarAccounts) {
         page = 'profile';
     } else {
         page = 'home';
