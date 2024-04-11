@@ -5,13 +5,15 @@ function detectPageCategory() {
 
     // No reliable URL to distinguish this, use the tooltip on the + person button
     const similarAccounts = document.querySelector('svg[aria-label="Similar accounts"]');
+    // Similarly on the user's profile page
+    const viewArchive = findElement('a', "View archive");
     
     let page;
     if (url.pathname.startsWith('/p/')) {
         page = "post";
     } else if (url.pathname.startsWith('/explore/')) {
         page = "explore";
-    } else if (similarAccounts) {
+    } else if (similarAccounts || viewArchive) {
         page = 'profile';
     } else {
         page = 'home';
