@@ -15,22 +15,13 @@ function detectPageCategory() {
         page = "explore";
     } else if (similarAccounts || viewArchive) {
         page = 'profile';
-    } else {
+    } else if (url.pathname == '/') {
         page = 'home';
+    } else {
+        page = 'unknown';
     }
     console.log(`Instalamb: Page type detected "${page}"`);
     return page;
-}
-
-function hideUseTheApp() {
-    let found = findElement('button', 'Use the app')
-    if (!found) {
-        return;
-    }
-
-    const holder = found.parentElement.parentElement.parentElement
-    shiftElementOutTheWay(holder);
-    console.log('Instalamb: Shifted "Use the app" off screen');
 }
 
 // Main entrypoint, when DOM changes
