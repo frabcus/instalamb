@@ -1,6 +1,6 @@
 
 function _hideNavByAria(name) {
-    let found = document.querySelector(`[aria-label="${name}"]`)
+    let found = document.querySelector(`div > svg[aria-label="${name}"]`)
     if (!found) {
         return;
     }
@@ -11,7 +11,7 @@ function _hideNavByAria(name) {
 }
 
 function _hideNavByAriaBottom(name) {
-    let found = document.querySelector(`[aria-label="${name}"]`)
+    let found = document.querySelector(`div > svg[aria-label="${name}"]`)
     if (!found) {
         return;
     }
