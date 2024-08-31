@@ -20,14 +20,13 @@ function detectPageCategory() {
     } else {
         page = 'unknown';
     }
-    console.log(`Instalamb: Page type detected "${page}"`);
     return page;
 }
 
 // Main entrypoint, when DOM changes
 const observer = new MutationObserver(async mutations => {
     const pageCategory = detectPageCategory();
-    console.log('Instalamb: Page is', pageCategory);
+    console.log('Instalamb: Page is type "' + pageCategory + '"');
 
     var sync = ((typeof browser == 'undefined') ? chrome : browser).storage.sync
     settings = await sync.get(({
@@ -49,11 +48,17 @@ const observer = new MutationObserver(async mutations => {
 
         "hideMetricsLikes": true,
         "hideMetricsCommentCounts": true,
-        "hideMetricsProfileCounts" : true
+        "hideMetricsProfileCounts" : true,
+
+        "exploreHideReels": true,
+
+        "hideUseTheApp": true
     }));
 
-    // Alway hide the "use the app"
-    hideUseTheApp();
+    // Global
+    if (settings.hideUseTheApp) {
+        hideUseTheApp();
+    }
 
     // Navigation
     if (settings.hideNavHome) {
@@ -118,6 +123,10 @@ const observer = new MutationObserver(async mutations => {
         if (settings.hideMetricsProfileCounts) {
             hideProfileCountsDesktop();
             hideProfileCountsMobile();
+        }
+    } else if (pageCategory == 'explore') {
+        if (settings.exploreHideReels) {
+            hideExploreReels();
         }
     }
 });

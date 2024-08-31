@@ -23,6 +23,10 @@ function saveOptions(e) {
         hideMetricsLikes: document.querySelector("#hideMetricsLikes").checked,
         hideMetricsCommentCounts: document.querySelector("#hideMetricsCommentCounts").checked,
         hideMetricsProfileCounts: document.querySelector("#hideMetricsProfileCounts").checked,
+
+        exploreHideReels: document.querySelector("#exploreHideReels").checked,
+
+        hideUseTheApp: document.querySelector("#hideUseTheApp").checked
     });
 }
   
@@ -47,6 +51,10 @@ function restoreOptions() {
         document.querySelector("#hideMetricsLikes").checked = result.hideMetricsLikes;
         document.querySelector("#hideMetricsCommentCounts").checked = result.hideMetricsCommentCounts;
         document.querySelector("#hideMetricsProfileCounts").checked = result.hideMetricsProfileCounts;
+
+        document.querySelector('#exploreHideReels').checked = result.exploreHideReels;
+
+        document.querySelector("#hideUseTheApp").checked = result.hideUseTheApp;
     }
 
     function onError(error) {
@@ -72,7 +80,11 @@ function restoreOptions() {
 
         "hideMetricsLikes": true,
         "hideMetricsCommentCounts": true,
-        "hideMetricsProfileCounts": true
+        "hideMetricsProfileCounts": true,
+
+        "exploreHideReels": false,
+
+        "hideUseTheApp": true
     });
     getting.then(setCurrentChoice, onError);
 }
