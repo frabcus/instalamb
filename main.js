@@ -22,6 +22,16 @@ function detectPageCategory() {
     return page;
 }
 
+function hideUseTheApp() {
+    let found = findElement('button', 'Use the app')
+    if (!found) {
+        return;
+    }
+
+    const holder = found.parentElement.parentElement.parentElement
+    shiftElementOutTheWay(holder);
+    console.log('Instalamb: Shifted "Use the app" off screen');
+}
 
 // Main entrypoint, when DOM changes
 const observer = new MutationObserver(async mutations => {
@@ -50,6 +60,9 @@ const observer = new MutationObserver(async mutations => {
         "hideMetricsCommentCounts": true,
         "hideMetricsProfileCounts" : true
     }));
+
+    // Alway hide the "use the app"
+    hideUseTheApp();
 
     // Navigation
     if (settings.hideNavHome) {
