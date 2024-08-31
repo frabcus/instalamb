@@ -1,4 +1,3 @@
-
 function _hideNavByAria(name) {
     let found = document.querySelector(`div > svg[aria-label="${name}"]`)
     if (!found) {
