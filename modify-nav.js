@@ -5,8 +5,10 @@ function _hideNavByAria(name) {
     }
     
     const holder = found.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
-    shiftElementOutTheWay(holder);
-    console.log(`Instalamb: Shifted "${name}" menu off screen`);
+    if (!isElementOutTheWay(holder)) {
+        shiftElementOutTheWay(holder);
+        console.log(`Instalamb: Shifted "${name}" menu off screen`);
+    }
 }
 
 function _hideNavByAriaBottom(name) {
@@ -16,8 +18,10 @@ function _hideNavByAriaBottom(name) {
     }
     
     const holder = found.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
-    shiftElementOutTheWay(holder);
-    console.log(`Instalamb: Shifted "${name}" menu off screen`);
+    if (!isElementOutTheWay(holder)) {
+        shiftElementOutTheWay(holder);
+        console.log(`Instalamb: Shifted "${name}" menu off screen`);
+    }
 }
 
 function _hideNavByName(name) {
@@ -27,20 +31,24 @@ function _hideNavByName(name) {
     }
     
     const holder = found.parentElement.parentElement;
-    shiftElementOutTheWay(holder);
-    console.log(`Instalamb: Shifted "${name}" menu off screen`);
+    if (!isElementOutTheWay(holder)) {
+        shiftElementOutTheWay(holder);
+        console.log(`Instalamb: Shifted "${name}" menu off screen`);
+    }
 }
 
 function _hideNavByUrl(name, url) {
-    let found = document.querySelector(`[href="${url}"]`)
+    let found = document.querySelector(`[href^="${url}"]`)
 
     if (!found) {
         return;
     }
     
     const holder = found.parentElement.parentElement.parentElement;
-    shiftElementOutTheWay(holder);
-    console.log(`Instalamb: Shifted "${name}" menu off screen`);
+    if (!isElementOutTheWay(holder)) {
+        shiftElementOutTheWay(holder);
+        console.log(`Instalamb: Shifted "${name}" menu off screen`);
+    }
 }
 
 
@@ -72,7 +80,7 @@ function hideNavProfile() {
 
 // Bottom part of navigation
 function hideNavThreads() {
-    _hideNavByUrl("Threads", "https://www.threads.net/");
+    _hideNavByUrl("Threads", "https://www.threads.net/?xmt");
 }
 function hideNavMore() {
     _hideNavByAriaBottom("Settings");

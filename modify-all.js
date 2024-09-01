@@ -5,6 +5,8 @@ function hideUseTheApp() {
     }
 
     const holder = found.parentElement.parentElement.parentElement
-    shiftElementOutTheWay(holder);
-    console.log('Instalamb: Shifted "Use the app" off screen');
+    if (!isElementOutTheWay(holder)) {    
+        shiftElementOutTheWay(holder);
+        console.log('Instalamb: Shifted "Use the app" off screen');
+    }
 }

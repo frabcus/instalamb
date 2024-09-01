@@ -26,3 +26,7 @@ function shiftElementOutTheWay(el) {
     el.style.top = '-9999px';
     el.style.left = '-9999px';
 }
+
+function isElementOutTheWay(el) {
+    return el.style.position == 'absolute' && el.style.top == '-9999px' && el.style.left == '-9999px';
+}

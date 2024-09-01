@@ -6,8 +6,10 @@ function hideHomeStoriesMenu() {
     }
     
     const holder = found.parentElement;
-    shiftElementOutTheWay(holder);
-    console.log('Instalamb: Shifted "Stories menu" off screen');
+    if (!isElementOutTheWay(holder)) {
+        shiftElementOutTheWay(holder);
+        console.log('Instalamb: Shifted "Stories menu" off screen');
+    }
 }
 
 // Right sidebar of home page at desktop widths
@@ -18,8 +20,10 @@ function hideHomeSuggestedForYou() {
     }
 
     const holder = found.parentElement.parentElement.parentElement
-    shiftElementOutTheWay(holder);
-    console.log('Instalamb: Shifted "Suggested for you" off screen');
+    if (!isElementOutTheWay(holder)) {
+        shiftElementOutTheWay(holder);
+        console.log('Instalamb: Shifted "Suggested for you" off screen');
+    }
 }
 
 // When scrolling in feed, it has a div "You're all caught up, You've seen all new posts from the past 7 days."
@@ -37,11 +41,18 @@ function hideHomeSuggestedPosts() {
     // Make articles before the div visible
     // (we match any articles, or an divs with article children because sponsored posts are article children
     // of a div)
-    let article = findElement('article')
+    let article = findElement('article');
+    let count_before_caught_up = 0;
     while (article && article.matches("article, :has(article)")) {
         // console.log("showing", article);
-        article.style.display = null;
+        if (article.style.display != "") {
+            count_before_caught_up++;
+            article.style.display = "";
+        }
         article = article.nextElementSibling;
+    }
+    if (count_before_caught_up > 0) {
+        console.log(`Instalamb: Shown ${count_before_caught_up} following posts in infinite scroll`);
     }
 
     // Skip the <div> which contains the "You're all caught up"
@@ -52,11 +63,16 @@ function hideHomeSuggestedPosts() {
     }
 
     // Hide articles after the "You've all caught up" div
+    let count_after_caught_up = 0;
     while (article && article.matches("article, :has(article)")) {
         // console.log("hiding", article);
-        article.style.display = "none";
+        if (article.style.display != "none") {
+            count_after_caught_up++;
+            article.style.display = "none";
+        }
         article = article.nextElementSibling;
     }
-
-    console.log('Instalamb: Hidden suggested posts in infinite scroll');
+    if (count_after_caught_up > 0) {
+        console.log(`Instalamb: Hidden ${count_after_caught_up} suggested posts in infinite scroll`);
+    }
 }

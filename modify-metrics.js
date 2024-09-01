@@ -3,10 +3,16 @@
 // This is on both the main timeline and at the bottom of post pages.
 function hidePostSummaryLikeCounts() {
     const nodes = findAllXPath("//span[text()[contains(., 'likes')]]/span[contains(@class,'html-span')]/ancestor::section[1]");
+    let count = 0
     nodes.forEach(node => {
-        shiftElementOutTheWay(node);
+        if (!isElementOutTheWay(node)) {
+            shiftElementOutTheWay(node);
+            count++;
+        }
     });
-    console.log(`Instalamb: Hidden ${nodes.length} post like counts`);
+    if (count > 0) {
+        console.log(`Instalamb: Hidden ${count} post like counts`);        
+    }
 }
 
 // On post comments there are like counts on each comment, e.g. "12 likes"
@@ -14,34 +20,58 @@ function hideCommentLikeCounts() {
     //
     const nodes = findAllXPath("//span[contains(., ' like') and string-length(translate(substring-before(., ' like'), '1234567890', '')) = 0]");
     //and string-length(translate(substring-before(., ' '), '1234567890', '')) = 0]");
+    let count = 0;
     nodes.forEach(node => {
         //node.style.backgroundColor = 'red';
-        shiftElementOutTheWay(node.parentElement);
+        if (!isElementOutTheWay(node.parentElement)) {
+            shiftElementOutTheWay(node.parentElement);
+            count++;
+        }
     });
-    console.log(`Instalamb: Hidden ${nodes.length} comment like counts`);
+    if (count > 0) {
+        console.log(`Instalamb: Hidden ${count} comment like counts`);
+    }
 }
 
 // Just remove the number (in the html-span) in lines "View all 3 comments"
 function hideHomeCommentCounts() {
     const nodes = findAllXPath("//span[contains(text()[1], 'View') and contains(text()[last()], 'comment')]/span[contains(@class,'html-span')]");
+    let count = 0;
     nodes.forEach(node => {
-        shiftElementOutTheWay(node);
+        if (!isElementOutTheWay(node)) {
+            shiftElementOutTheWay(node);
+            count++;
+        }
     });
-    console.log(`Instalamb: Hidden ${nodes.length} comment counts`);
+    if (count > 0) {
+        console.log(`Instalamb: Hidden ${count} comment counts`);
+    }
 }
 
 // Removes posts / followers / following counts
 function hideProfileCountsDesktop() {
     const nodes = findAllXPath("//a[text()[last()]=' followers']/ancestor::ul");
+    let count = 0;
     nodes.forEach(node => {
-        shiftElementOutTheWay(node);
+        if (!isElementOutTheWay(node)) {
+            shiftElementOutTheWay(node);
+            count++;
+        }
     });
-    console.log(`Instalamb: Hidden ${nodes.length} desktop profile counts`);
+    if (count > 0) {
+        console.log(`Instalamb: Hidden ${count} desktop profile counts`);
+    }
 }
 function hideProfileCountsMobile() {
     const nodes = findAllXPath("//span[text()[last()]=' followers']/ancestor::ul");
+    let count = 0;
     nodes.forEach(node => {
-        shiftElementOutTheWay(node);
+        if (!isElementOutTheWay(node)) {
+            shiftElementOutTheWay(node);
+            count++;
+        }
     });
-    console.log(`Instalamb: Hidden ${nodes.length} mobile profile counts`);
+    if (count > 0) {
+        console.log(`Instalamb: Hidden ${count} mobile profile counts`);
+    }
 }
