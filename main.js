@@ -28,7 +28,7 @@ const observer = new MutationObserver(async mutations => {
     const pageCategory = detectPageCategory();
     console.log('Instalamb: -------------------- Page is type "' + pageCategory + '"');
 
-    var sync = ((typeof browser == 'undefined') ? chrome : browser).storage.sync
+    var sync = (chrome?.storage?.sync || browser?.storage?.sync);
     settings = await sync.get(({
         "hideHomeStories": true,
         "hideHomeSuggestedForYou": true,

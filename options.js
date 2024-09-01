@@ -1,6 +1,6 @@
 console.log('Instalamb: Options loading');
 
-var sync = ((typeof browser == 'undefined') ? chrome : browser).storage.sync;
+var sync = (chrome?.storage?.sync || browser?.storage?.sync);
 
 function saveOptions(e) {
     sync.set({
