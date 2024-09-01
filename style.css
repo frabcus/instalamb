@@ -5,6 +5,7 @@ body {
     font-family: inherit;
     font-size: 12px;
     font-family: system-ui;
+    min-width: 25em;
 }
 
 .icon {
