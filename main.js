@@ -26,7 +26,7 @@ function detectPageCategory() {
 // Main entrypoint, when DOM changes
 const observer = new MutationObserver(async mutations => {
     const pageCategory = detectPageCategory();
-    console.log('Instalamb: -------------------- Page is type "' + pageCategory + '"');
+    console.log(`Instalamb: ----- ${pageCategory[0].toUpperCase() + pageCategory.slice(1)} Page -----`);
 
     var sync = (chrome?.storage?.sync || browser?.storage?.sync);
     settings = await sync.get(({
