@@ -34,9 +34,11 @@ function hideHomeSuggestedPosts() {
     }
     shiftElementOutTheWay(suggestedPosts);
 
-    // Make articles before the div into 
+    // Make articles before the div visible
+    // (we match any articles, or an divs with article children because sponsored posts are article children
+    // of a div)
     let article = findElement('article')
-    while (article && article.tagName == 'ARTICLE') {
+    while (article && article.matches("article, :has(article)")) {
         // console.log("showing", article);
         article.style.display = null;
         article = article.nextElementSibling;
@@ -50,7 +52,7 @@ function hideHomeSuggestedPosts() {
     }
 
     // Hide articles after the "You've all caught up" div
-    while (article && article.tagName == 'ARTICLE') {
+    while (article && article.matches("article, :has(article)")) {
         // console.log("hiding", article);
         article.style.display = "none";
         article = article.nextElementSibling;
