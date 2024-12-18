@@ -76,3 +76,17 @@ function hideHomeSuggestedPosts() {
         console.log(`Instalamb: Hidden ${count_after_caught_up} suggested posts in infinite scroll`);
     }
 }
+
+// Hide suggested followers on profile page after following someone
+function hideProfileSuggestedFollowers() {
+    let found = findElement('span', 'Suggested for you', '@dir="auto"');
+    if (!found) {
+        return;
+    }
+
+    const holder = found.parentElement.parentElement.parentElement;
+    if (!isElementOutTheWay(holder)) {
+        shiftElementOutTheWay(holder);
+        console.log('Instalamb: Shifted "Suggested followers" off screen');
+    }
+}
