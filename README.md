@@ -20,3 +20,5 @@ Credits
 =======
 
 [Lamb by Symbolon](https://thenounproject.com/icon/lamb-1046393/) from the Noun Project, Royalty-Free License
+
+Contribution by Neo
