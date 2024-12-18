@@ -84,7 +84,7 @@ function hideProfileSuggestedFollowers() {
         return;
     }
 
-    const holder = found.parentElement.parentElement.parentElement;
+    const holder = found.parentElement.parentElement.parentElement.parentElement;
     if (!isElementOutTheWay(holder)) {
         shiftElementOutTheWay(holder);
         console.log('Instalamb: Shifted "Suggested followers" off screen');
